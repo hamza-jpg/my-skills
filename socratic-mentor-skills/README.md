@@ -1,35 +1,34 @@
 # Socratic Mentor Skills Collection
 
-Bu paket, AI ajanlarını (Antigravity, Cursor, Claude vb.) "kod yazan uygulayıcı" modundan çıkarıp, kullanıcıyı ilk prensiplerden eğiten, rasyonel ve Sokratik bir **Senior Teknik Mentor** haline getiren özelleşmiş beceri ve kural setidir.
+A modular capability suite designed to transform an AI coding assistant into an objective, first-principles **Senior Technical Mentor**.
 
 ---
 
-## Koleksiyon İçeriği
+## Contents
 
-1. **`AGENTS.md`**: Proje seviyesi davranış kuralı şablonu (Kural sözleşmesi).
-2. **`socratic-pedagogy/`**: 4 aşamalı öğrenme döngüsü (Teşhis -> Sokratik Soru -> Kademeli İpucu -> Pekiştirme).
-3. **`architecture-mentor/`**: Sistem tasarımı seansları, NFR analizi, CAP/ACID trade-off'ları ve ADR koçluğu.
-4. **`ml-first-principles/`**: Matematiksel zemin (gradyan, attention, loss), tensör hata ayıklama ve RAG mimarileri.
-5. **`deliberate-practice-katas/`**: "Spot the Bug", Refactoring ve "Sıfırdan İnşa Et" formatında kasıtlı pratik üretimi.
-6. **`code-critique-mentor/`**: Temiz kod, $O(N)$ karmaşıklığı ve savunmacı programlama odaklı pedagojik kod incelemesi.
-
----
-
-## Temel Davranış Kısıtlamaları
-
-* **Doğrudan Çözüm Yasaktır:** Agent doğrudan çalışan kodu vermez; yönlendirici sorular ve kademeli ipuçlarıyla çözümü sizin inşa etmenizi sağlar.
-* **Yapay Övgü Yasaktır (Zero Flattery):** "Harika!", "Tebrikler!", "Süpersin!" gibi duygusal ifadeler bulunmaz. İletişim nesnel ve teknik odaklıdır.
-* **Analoji Yasaktır (İstenmedikçe):** Kullanıcı açıkça talep etmedikçe günlük hayat analojileri yapılmaz. Tüm kavramlar doğrudan bilgisayar bilimi ve matematik terminolojisiyle açıklanır.
-* **Emoji Yasaktır:** Çıktılar tamamen temiz teknik metin formatındadır.
+1. **`AGENTS.md`**: Project-level rule contract enforcing the didactic mentor persona.
+2. **`socratic-pedagogy/`**: 4-phase learning loop (Diagnostic -> Socratic Inquiries -> Progressive Scaffolding -> Consolidation).
+3. **`architecture-mentor/`**: System design sessions, NFR analysis, CAP/ACID trade-offs, and ADR coaching.
+4. **`ml-first-principles/`**: Mathematical foundations (gradients, attention mechanisms, loss functions), tensor debugging, and RAG architectures.
+5. **`deliberate-practice-katas`**: Challenge generator for "Spot the Bug", Refactoring Katas, and "Build from Scratch" exercises.
+6. **`code-critique-mentor/`**: Objective code review evaluating Big-O complexity, Clean Code, boundary conditions, and defensive programming without rewriting code.
 
 ---
 
-## Nasıl Kurulur?
+## Behavioral Constraints
 
-Çalışma alanınızın kök dizininde `.agents/skills/` klasörüne ilgili skill klasörlerini kopyalayın ve `AGENTS.md` dosyasını proje kök dizininize ekleyin:
+* **No Direct Solutions:** The agent does not provide ready-to-run solutions. The learner writes the code; the agent guides via targeted inquiries.
+* **Zero Flattery:** Congratulatory phrases ("Great job!", "Awesome!", "Tebrikler!") are forbidden. Communication is neutral, technical, and direct.
+* **No Unsolicited Analogies:** Metaphors and storytelling are banned unless explicitly requested. Concepts are explained using direct computer science and mathematical terms.
+* **Zero Emojis:** Plain technical text formatting only.
+
+---
+
+## Installation
+
+Copy the skill directories into your workspace's `.agents/skills/` directory and place `AGENTS.md` in your project root:
 
 ```bash
-# Projenizin kök dizininde:
 mkdir -p .agents/skills
 cp -r path/to/socratic-mentor-skills/* .agents/skills/
 cp path/to/socratic-mentor-skills/AGENTS.md ./AGENTS.md

@@ -1,72 +1,72 @@
 # my-skills
 
-Kişiselleştirilmiş, modüler AI ajan becerileri (skills), kuralları ve iş akışları kütüphanesi. 
+Curated collection of modular AI agent skills, rules, and workflows for Google Antigravity and compatible LLM coding assistants.
 
-Bu depo, Google Antigravity ve uyumlu AI kodlama ajanları için tasarlanmış özel yetenek koleksiyonlarını tek bir çatı altında barındırır. Yeni yetenek paketleri geliştikçe bu çatı altında modüler olarak listelenecektir.
+This repository serves as an umbrella catalog for specialized agent capabilities. As new skill suites are developed, they are added modularly under their respective collection directories.
 
 ---
 
-## Koleksiyonlar (Skill Collections)
+## Collections
 
 ### 1. `socratic-mentor-skills`
-AI ajanını "kodu doğrudan yazan uygulayıcı" modundan çıkarıp, kullanıcıyı ilk prensiplerden eğiten rasyonel bir **Senior Teknik Mentor** haline getiren beceri seti.
+A pedagogical skill suite designed to transform an AI coding assistant from a direct code generator into a rigorous, first-principles **Senior Technical Mentor**.
 
-* **`socratic-pedagogy`**: 4 aşamalı öğrenme döngüsü (Teşhis -> Sokratik Soru -> Kademeli İpucu -> Pekiştirme).
-* **`architecture-mentor`**: Sistem tasarımı, NFR analizi, CAP/ACID trade-off'ları ve ADR koçluğu.
-* **`ml-first-principles`**: Matematiksel zemin (gradyan, attention mekanizması, loss fonksiyonları), tensör hata ayıklama ve RAG mimarileri.
-* **`deliberate-practice-katas`**: "Spot the Bug", Refactoring ve "Sıfırdan İnşa Et" formatında kasıtlı pratik görevleri.
-* **`code-critique-mentor`**: Temiz kod, $O(N)$ karmaşıklığı ve savunmacı programlama odaklı nesnel kod incelemesi.
-* **`AGENTS.md`**: Çalışma alanında daima devrede olan mentorluk kural sözleşmesi.
+* **`socratic-pedagogy`**: 4-phase learning loop (Diagnostic -> Socratic Inquiries -> Progressive Scaffolding -> Consolidation).
+* **`architecture-mentor`**: System design coaching, Non-Functional Requirements (NFR) analysis, CAP/ACID trade-offs, and Architecture Decision Record (ADR) writing.
+* **`ml-first-principles`**: Deep learning mathematical foundations (gradients, self-attention, loss surfaces), tensor debugging, and RAG architectures.
+* **`deliberate-practice-katas`**: Challenge generator ("Spot the Bug", Refactoring Katas, "Build from Scratch", and Incident Drills).
+* **`code-critique-mentor`**: Pedagogical code review evaluating Big-O complexity, Clean Code, boundary conditions, and defensive programming without rewriting the code.
+* **`AGENTS.md`**: Project-level rule contract enforcing the didactic mentor persona.
 
 ---
 
-## Hızlı Başlangıç & Kurulum
+## Quickstart & Installation
 
-Bu yetenekleri kendi Antigravity veya AI kodlama ortamınızda kullanmak için:
+To install these skills in your Antigravity workspace or compatible AI agent environment:
 
-1. Bu depoyu klonlayın veya ilgili skill klasörünü projenize kopyalayın:
+1. Clone this repository:
    ```bash
    git clone https://github.com/hamza-jpg/my-skills.git
    ```
 
-2. Projenizin kök dizininde `.agents/skills/` dizini oluşturun ve kullanmak istediğiniz becerileri içine yerleştirin:
+2. Copy the desired skills into your project's `.agents/skills/` directory:
    ```bash
    mkdir -p .agents/skills
    cp -r my-skills/socratic-mentor-skills/* .agents/skills/
    ```
 
-3. Mentor davranış kuralını projenizin kök dizinine ekleyin:
+3. Copy the mentor rule contract to your project root:
    ```bash
    cp my-skills/socratic-mentor-skills/AGENTS.md ./AGENTS.md
    ```
 
 ---
 
-## Tasarım İlkeleri & Kısıtlamalar
+## Design Principles & Behavioral Constraints
 
-Bu repodaki mentor becerileri katı pedagojik kısıtlamalarla donatılmıştır:
+The skills in this repository follow strict pedagogical constraints:
 
-1. **Doğrudan Çözüm Yasaktır:** Agent kodu doğrudan yazmaz; kullanıcının zihinsel modellerini geliştirecek hedef sorular sorar.
-2. **Yapay Övgü Yasaktır (Zero Flattery):** "Harika!", "Tebrikler!", "Süpersin!" gibi dolgu ifadeler bulunmaz. İletişim nesnel, soğukkanlı ve doğrudan teknik gerçek odaklıdır.
-3. **Analoji Yasaktır (İstenmedikçe):** Kullanıcı açıkça talep etmedikçe günlük hayat analojileri yapılmaz. Tüm konular doğrudan bilgisayar bilimi ve matematik terminolojisiyle açıklanır.
-4. **Emoji Yasaktır:** Çıktılar tamamen temiz ve profesyonel teknik metin formatındadır.
-
----
-
-## Referanslar & İlham Kaynakları (References & Citations)
-
-Bu depodaki yetenekler ve kurallar aşağıdaki açık kaynak kaynaklardan, akademik çalışmalardan ve mühendislik literatüründen ilham almıştır:
-
-* **ClawForge Skill Repository:** [https://github.com/jackjin1997/ClawForge](https://github.com/jackjin1997/ClawForge) - Temel temiz kod ve yazılım geliştirme pratikleri.
-* **Google Antigravity Customization Architecture:** Antigravity YAML frontmatter tabanlı aşamalı açığa çıkarma (progressive disclosure) skill mimarisi.
-* **Clean Code & Software Craftsmanship:** Robert C. Martin ("Uncle Bob") - Temiz kod ve SOLID tasarım prensipleri.
-* **Deliberate Practice Framework:** K. Anders Ericsson ("The Role of Deliberate Practice in the Acquisition of Expert Performance").
-* **Machine Learning from First Principles:** Andrej Karpathy (Micrograd & "Neural Networks: Zero to Hero" pedagojik yaklaşımı).
-* **Distributed Systems Architecture:** Martin Kleppmann ("Designing Data-Intensive Applications", O'Reilly Media).
-* **Architecture Decision Records (ADR):** Michael Nygard ("Documenting Architecture Decisions").
+1. **No Direct Code Generation:** The agent does not provide copy-paste solutions on the first pass. The learner writes the code; the agent guides with targeted questions.
+2. **Zero Flattery:** Congratulatory filler and emotive praising ("Great job!", "Awesome!", "Tebrikler!") are prohibited. The interaction is objective, neutral, and technically demanding.
+3. **No Unsolicited Analogies:** Metaphors and everyday analogies are forbidden unless explicitly requested. Concepts are explained using direct computer science and mathematical terminology.
+4. **Zero Emojis:** Communication is strictly plain technical markdown text.
 
 ---
 
-## Lisans
+## References & Inspirations
 
-Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
+This repository draws inspiration and patterns from the following open-source projects, academic literature, and engineering standards:
+
+* **ClawForge Skills Repository:** [https://github.com/jackjin1997/ClawForge](https://github.com/jackjin1997/ClawForge) - Software craftsmanship and developer skill patterns.
+* **Google Antigravity Customization Architecture:** YAML frontmatter specification with progressive disclosure.
+* **Robert C. Martin ("Uncle Bob"):** *Clean Code: A Handbook of Agile Software Craftsmanship* - SOLID design principles and refactoring metrics.
+* **Martin Kleppmann:** *Designing Data-Intensive Applications* (O'Reilly Media) - Distributed systems trade-offs.
+* **Andrej Karpathy:** *Micrograd & Neural Networks: Zero to Hero* - First-principles machine learning pedagogy.
+* **K. Anders Ericsson:** *The Role of Deliberate Practice in the Acquisition of Expert Performance* - Deliberate practice and targeted error analysis.
+* **Michael Nygard:** *Documenting Architecture Decisions* - Standard Architecture Decision Record (ADR) format.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
